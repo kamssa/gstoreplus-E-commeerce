@@ -1,0 +1,86 @@
+.container{
+  margin-top: 20px;
+  z-index: 0;
+}
+.vertical-menu {
+  width: 200px;
+
+}
+.dropdown-menu{
+  position: relative;
+  margin-left: 200px;
+  width: 700px;
+}
+.carousel-inner{
+  z-index: 0;
+}
+.vertical-menu  {
+  background-color: #ffffff;
+  color: black;
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 12px;
+}
+
+.vertical-menu a {
+  background-color: #ffffff;
+  color: black;
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 12px;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #0001a2;
+  color: white;
+}
+
+.card{
+  background-color: #bf360c;
+}
+
+#elementID:hover{
+  color: #323232;
+  text-shadow: 1px 1px 1px #ccc;
+  font-size: 3.5em;
+}
+
+#element:hover{
+  color: #323232;
+  text-shadow: 1px 1px 1px #ccc;
+  font-size: 3.5em;
+}
+
+.menu-droite {
+  background-color: #ffffff;
+  color: black;
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 12px;
+}
+.carousel{
+  width: 100%;
+
+}
+.carousel .carousel-item {
+  height: auto;
+
+}
+
+.carousel-item img {
+  position: relative;
+  object-fit:cover;
+  left: 0;
+  min-height: 400px;
+
+}

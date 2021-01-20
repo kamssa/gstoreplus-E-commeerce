@@ -1,0 +1,41 @@
+.container{
+  margin-top: 20px;
+}
+.vertical-menu {
+  width: 200px;
+
+
+}
+
+.vertical-menu a {
+  background-color: #ffffff;
+  color: black;
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 12px;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #0001a2;
+  color: white;
+}
+.main{
+  display: flex;
+  flex: 1 1 5em;
+  height:50px;
+  background-color: #fff3e0;
+  margin-top: 40px;
+}
+.card{
+  background-color: #bf360c;
+}
+.cat{
+  margin: 0;
+  padding: 0;
+}

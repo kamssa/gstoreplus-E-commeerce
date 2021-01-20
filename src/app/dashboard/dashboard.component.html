@@ -1,0 +1,33 @@
+<div class="container">
+<div class="vertical-menu">
+  <a class="active">Les categories</a>
+  <div *ngFor="let cat of categories">
+  <a class="cat">{{cat.nom}}</a>
+  </div>
+</div>
+  <div class="nav">
+    <div routerLinkActive="active" *ngFor="let menuItem of menuItems" class="main"
+         fxLayoutWrap="wrap"
+         fxLayoutAlign="space-around">
+      <a class="flex-item " [routerLink]="[menuItem.path]">
+        <p>{{menuItem.title}}</p>
+      </a>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <h4 class="card-title">Voir plus</h4>
+            <div class="card-body">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
