@@ -1,0 +1,93 @@
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
+
+  <!-- ============================ COMPONENT REGISTER   ================================= -->
+    <div class="card mx-auto" style="max-width:520px; margin-top:40px;">
+        <article class="card-body">
+      <header class="mb-4"><h4 class="card-title">Créer son compte</h4></header>
+      <form [formGroup]="registryForm" (ngSubmit)="onSubmit()" *ngIf="registryForm">
+          <div class="form-row">
+            <div class="col form-group">
+              <label>Prénoms</label>
+                <input type="text" class="form-control" placeholder="" formControlName="prenom">
+            </div> <!-- form-group end.// -->
+            <div class="col form-group">
+              <label>nom</label>
+                <input type="text" class="form-control" placeholder="" formControlName="nom">
+            </div> <!-- form-group end.// -->
+          </div> <!-- form-row end.// -->
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="" formControlName="email">
+            <small class="form-text text-muted">Nous ne partagerons jamais votre e-mail avec qui que ce soit.</small>
+          </div>
+        <div class="form-group">
+          <div class="container">
+
+          </div>
+          <label class="">Téléphone</label>
+          <input type="text" ng2TelInput (countryChange)="onCountryChange($event)" formControlName="telephone">
+          <small class="form-text text-muted">Nous ne partagerons jamais votre e-mail avec qui que ce soit.</small>
+        </div><!-- form-group end.// -->
+          <!--<div class="form-group">
+            <label class="custom-control custom-radio custom-control-inline">
+              <input class="custom-control-input" checked="" type="radio" name="gender" value="option1">
+              <span class="custom-control-label"> Homme </span>
+            </label>
+            <label class="custom-control custom-radio custom-control-inline">
+              <input class="custom-control-input" type="radio" name="gender" value="option2">
+              <span class="custom-control-label"> Femme </span>
+            </label>
+          </div> &lt;!&ndash; form-group end.// &ndash;&gt;-->
+       <!--   <div class="form-row" formGroupName="adresse">
+            <div class="form-group col-md-6">
+              <label>Ville</label>
+              <input type="text" class="form-control" formControlName="ville">
+            </div> &lt;!&ndash; form-group end.// &ndash;&gt;
+            <div class="form-group col-md-6">
+              <label>Pays</label>
+              <select id="inputState" class="form-control">
+                <option> Choose...</option>
+                  <option selected="">Côte d'ivoire -00225</option>
+                  <option>Afganistan</option>
+                  <option >Etats-unis d'amérique</option>
+                  <option>France</option>
+                  <option>Maroc</option>
+              </select>
+            </div> &lt;!&ndash; form-group end.// &ndash;&gt;
+          </div> -->
+        <!-- form-row.// -->
+          <!--<div class="form-group">
+            <label>Domicile</label>
+            <textarea class="form-control"  name="story" rows="5" cols="33">
+            </textarea>
+            <input type="textarea" class="form-control" placeholder="">
+          </div> &lt;!&ndash; form-group end.// &ndash;&gt;-->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Mot de passe</label>
+                <input class="form-control" type="password" formControlName="password">
+            </div> <!-- form-group end.// -->
+            <div class="form-group col-md-6">
+              <label>Confirmation mot de passe</label>
+                <input class="form-control" type="password" formControlName="password">
+            </div> <!-- form-group end.// -->
+          </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block" style="background: #12225b; border-color: #12225b;"> Enregistrer  </button>
+            </div> <!-- form-group// -->
+            <div class="form-group">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" (change)="fieldsChange($event)" >
+                    <div class="custom-control-label" style="border-color: #12225b;"> Je suis d'accord avec <a href="#">les termes et contitions</a>  </div> </label>
+              </div> <!-- form-group end.// -->
+        </form>
+      </article><!-- card-body.// -->
+      </div> <!-- card .// -->
+      <p class="text-center mt-4">Déjà inscrit? <a href="">Se connecter</a></p>
+      <br><br>
+  <!-- ============================ COMPONENT REGISTER  END.// ================================= -->
+
+
+  </section>
+  <!-- ========================= SECTION CONTENT END// ========================= -->

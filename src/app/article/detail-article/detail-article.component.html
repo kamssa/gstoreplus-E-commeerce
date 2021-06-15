@@ -1,0 +1,209 @@
+<div id="breadcrumb-container">
+  <div class="container">
+    <ul class="breadcrumb">
+      <li class="active">Détails du produit</li>
+    </ul>
+  </div>
+</div>
+
+<div class="container" *ngIf="detailArticle.articles" >
+  <div class="row">
+    <div class="col-md-5 col-lg-5 col-sm-5">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
+           style="border: 1px solid lightgrey;" >
+        <ol class="carousel-indicators" *ngFor="let img of imageDetails">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" id="lislid">
+            <img [src]="img.imageUrl" class="d-block w-100" alt="..." style="border: 1px solid grey;">
+          </li>
+         <!-- <li data-target="#carouselExampleIndicators" data-slide-to="1" id="lislides">
+            <img [src]="i" class="d-block w-100" alt="..." style="border: 1px solid grey;">
+          </li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2" id="lislide">
+            <img src="assets/images/table-lamp2.png" class="d-block w-100" alt="..." style="border: 1px solid grey;">
+          </li>-->
+        </ol>
+
+        <div class="carousel-inner" style="background: lightgrey;" *ngFor="let img of imageDetails">
+          <div class="carousel-item active">
+			    	<span class='zoom' id='ex1'>
+			      		<img [src]="img.imageUrl" class="d-block w-100" alt="...">
+			      </span>
+          </div>
+          <div class="carousel-item">
+			    	<span class='zoom' id='ex2'>
+			      		<img src="assets/images/table-lamp1.png" class="d-block w-100" alt="...">
+			  		</span>
+          </div>
+          <div class="carousel-item">
+			    	<span class='zoom' id='ex3'>
+			      		<img src="assets/images/table-lamp2.png" class="d-block w-100" alt="...">
+			  		</span>
+          </div>
+        </div>
+        <!--  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+           <span class="sr-only">Previous</span>
+         </a>
+         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+           <span class="sr-only">Next</span>
+         </a> -->
+      </div>
+    </div>
+    <div class="col-md-7 col-lg-7 col-sm-7">
+      <h2>{{detailArticle.articles.nom}}</h2><br>
+      <div style="font-size: 17px;">
+					<span>
+						<i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+						<i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+						<i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+						<i class="fa fa-star-half-o" aria-hidden="true" style="color: #ff6a00;"></i>
+					</span>
+        <span>3 Review(s)</span>
+        <span class="separator">|</span> <a href="#review" class="rate-this">Add Your Review</a>
+      </div><br>
+      <div>
+        <strong>Disponibilité : </strong>In Stock<br>
+        <strong>Code produit : </strong>483512569<br>
+        <strong>Brand : </strong>Apple<br>
+      </div>
+      <hr>
+      <!--<div>
+        <span>Sélectionnez une Couleur:</span><br><br><br>
+        <div>
+          <a href="#" style="background-color: rgb(255, 255, 255);" class="check"></a>
+          <a href="#" style="background-color: rgb(209, 210, 212);" class="check"></a>
+          <a href="#" style="background-color: rgb(102, 100, 103);" class="check"></a>
+          <a href="#" style="background-color: green;" class="check"></a>
+          <a href="#" style="background-color: brown;" class="check"></a>
+          <a href="#" style="background-color: rgb(82, 114, 179);" class="check"></a>
+          <a href="#" style="background-color: rgb(172, 191, 11);" class="check"></a>
+        </div>
+      </div>--><br>
+
+      <div>
+        <form #f="ngForm" (ngSubmit)="onAddProductToCaddy(detailArticle.articles)">
+          <input type="number" id="quantity" name="quantity" value="1" min="1" style="width: 100px;height:40px;font-size: 20px;text-align: center;"
+          [(ngModel)]="detailArticle.articles.quantity" ngModel>
+          <button class="btn btn-danger btn-lg" style="margin-left: 50px;"> Ajouter au panier </button>
+        </form>
+      </div><br>
+      <!--<div>
+        <a href="#" class="btn btn-info" class="check"><i class="fa fa-heart"></i></a>
+        <a href="#" class="btn btn-info" class="check" style="margin-right: 60px;"><i class="fa fa-check"></i></a>
+
+        <a href="#" class="btn" style="background: #12225b;"><i class="fa fa-facebook" style="color: white;"></i></a>
+        <a href="#" class="btn btn-info"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="btn" style="background: #FF1493;"><i class="fa fa-instagram" style="color: white;"></i></a>
+        <a href="#" class="btn" style="background: red;"><i class="fa fa-youtube" style="color: white;"></i></a>
+        &lt;!&ndash; <a href="#" class="btn btn-info"><i class="fa fa-dribble"></i></a> &ndash;&gt;
+      </div>-->
+    </div>
+    <!-- <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+      autres
+    </div> -->
+  </div>
+</div><br><br><br><br><br>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row" style="border: 1px solid lightgrey;font-size: 17px;">
+        <div class="col-3">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" style="border-bottom: 1px solid lightgrey;font-weight: bold;">Aperçu</a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false" style="border-bottom: 1px solid lightgrey;font-weight: bold;">Description</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false" style="font-weight: bold;">Larevue</a>
+            <!-- <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false" style="border-bottom: 1px solid lightgrey;font-weight: bold;">Information additionelle</a>
+            <a class="nav-link" id="v-pills-voir-tab" data-toggle="pill" href="#v-pills-voir" role="tab" aria-controls="v-pills-voir" aria-selected="false" style="font-weight: bold;">Je vois</a> -->
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="tab-content" id="v-pills-tabContent" style="padding-top: 10px;text-align: justify;">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt excepteur ea incididunt minim occaecat.
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+              Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur mollit aute magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis laboris ipsum velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et elit aliquip labore Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod do sint minim consectetur qui.
+            </div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident laboris ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla. Velit et et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est magna commodo est ea veniam consectetur.
+            </div>
+            <!-- <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+              Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor proident in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do. Aliqua amet qui mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt amet. Culpa ullamco sit adipisicing labore officia magna elit nisi in aute tempor commodo eiusmod.
+            </div>
+            <div class="tab-pane fade" id="v-pills-voir" role="tabpanel" aria-labelledby="v-pills-voir-tab">
+              Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor proident in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do. Aliqua amet qui mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt amet. Culpa ullamco sit adipisicing labore officia magna elit nisi in aute tempor commodo eiusmod.
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-4">jhgyj</div> -->
+  </div><br><br>
+
+  <section  class="padding-bottom-sm">
+
+    <h2>Également à acheter</h2>
+
+    <div class="row row-sm">
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+        <div class="card card-sm card-product-grid">
+          <a href="/detail" class="img-wrap"> <img src="assets/images/1.jpg"> </a>
+          <figcaption class="info-wrap">
+            <a href="/detail" class="title">Just another product name</a>
+            <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+          </figcaption>
+        </div>
+      </div> <!-- col.// -->
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+        <div class="card card-sm card-product-grid">
+          <a href="/detail" class="img-wrap"> <img src="assets/images/2.jpg"> </a>
+          <figcaption class="info-wrap">
+            <a href="/detail" class="title">Some item name here</a>
+            <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
+          </figcaption>
+        </div>
+      </div> <!-- col.// -->
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+        <div class="card card-sm card-product-grid">
+          <a href="/detail" class="img-wrap"> <img src="assets/images/3.jpg"> </a>
+          <figcaption class="info-wrap">
+            <a href="/detail" class="title">Great product name here</a>
+            <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
+          </figcaption>
+        </div>
+      </div> <!-- col.// -->
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+        <div class="card card-sm card-product-grid">
+          <a href="/detail" class="img-wrap"> <img src="assets/images/4.jpg"> </a>
+          <figcaption class="info-wrap">
+            <a href="/detail" class="title">Just another product name</a>
+            <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+          </figcaption>
+        </div>
+      </div> <!-- col.// -->
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+        <div class="card card-sm card-product-grid">
+          <a href="/detail" class="img-wrap"> <img src="assets/images/5.jpg"> </a>
+          <figcaption class="info-wrap">
+            <a href="/detail" class="title">Just another product name</a>
+            <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+          </figcaption>
+        </div>
+      </div> <!-- col.// -->
+      <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+        <div class="card card-sm card-product-grid">
+          <a href="/detail" class="img-wrap"> <img src="assets/images/6.jpg"> </a>
+          <figcaption class="info-wrap">
+            <a href="/detail" class="title">Some item name here</a>
+            <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
+          </figcaption>
+        </div>
+      </div> <!-- col.// -->
+
+
+    </div> <!-- row.// -->
+  </section>

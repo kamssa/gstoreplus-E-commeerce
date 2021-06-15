@@ -1,0 +1,13 @@
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+
+.sticky+.content {
+  padding-top: 70px;
+}
+#navbar{
+  z-index: 1;
+}

@@ -1,0 +1,120 @@
+<header class="section-header">
+  <section class="header-main border-bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12 col-lg-3 col-xl-2">
+          <a href="Accueil.html" class="brand-wrap">
+            <img class="logo" src="assets/img/logo.png">
+          </a> <!-- brand-wrap.// -->
+        </div>
+        <div class="col-md-6 col-lg-5 col-xl-6">
+          <form action="#" class="search-header">
+            <div class="input-group w-100">
+                <input type="text" class="form-control" placeholder="Chercher un article, une marque ou une catégorie ">
+
+                <div class="input-group-append">
+                  <button class="btn btn-warning" style="background-color: #12225b;color: white;border-color: #12225b;" type="submit">
+                    <i class="fa fa-search"></i> Rechercher
+                  </button>
+                </div>
+              </div>
+          </form> <!-- search-wrap .end// -->
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="widgets-wrap float-md-right">
+            <div class="widget-header mr-3">
+              <a routerLink="/mon-espace" class="widget-view">
+                <div class="icon-area">
+                  <i class="fa fa-user"></i>
+                  <span class="notify">3</span>
+                </div>
+                <small class="text"> Mon profil </small>
+              </a>
+            </div>
+            <!--<div class="widget-header mr-3">
+              <a routerLink="/mon-espace" class="widget-view">
+                <div class="icon-area">
+                  <i class="fa fa-comments"></i>
+                  <span class="notify">1</span>
+                </div>
+                <small class="text"> Messages </small>
+              </a>
+            </div>-->
+           <!-- <div class="widget-header mr-3">
+              <a routerLink="/mon-espace" class="widget-view">
+                <div class="icon-area">
+                  <i class="fa fa-book"></i>
+                </div>
+                <small class="text"> Commandes </small>
+              </a>
+            </div>-->
+            <div class="widget-header">
+              <a routerLink="/mon-panier" class="widget-view">
+                <div class="icon-area">
+                  <i class="fa fa-shopping-cart"></i>
+                  <span class="notify">{{panierService.getCurrentPanier().items.size}}</span>
+                </div>
+                <small class="text"> Panier </small>
+              </a>
+            </div>
+          </div><!-- widgets-wrap.// -->
+        </div><!-- col.// -->
+      </div><!-- row.// -->
+    </div><!-- container.// -->
+  </section>
+
+
+  <nav class="navbar navbar-main navbar-expand-lg border-bottom">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="main_nav">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-bars text-muted mr-2"></i>Catégories </a>
+              <div class="dropdown-menu dropdown-large">
+                <nav class="nav-home-aside">
+                  <h6 class="title-category">Catégories
+                    <i class="d-md-none icon fa fa-chevron-down"></i></h6>
+                  <ul class="menu-category" *ngFor="let cat of categories">
+                    <li><a>{{cat.nom}}</a>
+                      <ul class="submenu">
+                       <!-- <li><a  *ngFor="let sousCat of cat.sousCategories">
+                          <span (click)="onId(sousCat.id)">{{sousCat.nom}}</span>
+                        </a>
+                        </li>
+                        <ul class="submenu" *ngIf="produits">
+                          <li><a  *ngFor="let p of produits">
+                            <span (click)="onSelect(p)">{{p.nom}}</span>
+                          </a></li>
+                        </ul>-->
+
+                      </ul>
+
+                    </li>
+                  </ul>
+                </nav>
+              </div> <!--  dropdown-menu dropdown-large end.// -->
+            </li>
+
+          </ul>
+          <!--<ul class="navbar-nav ml-md-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/produit-par-categorie">Obtenir l'application</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" routerLink="/produit-par-categorie" data-toggle="dropdown">Français</a>
+              <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" routerLink="/produit-par-categorie">Anglais</a>
+              <a class="dropdown-item" routerLink="/produit-par-categorie">Allemand</a>
+              </div>
+            </li>
+          </ul>-->
+        </div><!-- collapse .// -->
+    </div><!-- container .// -->
+  </nav>
+
+</header><!-- section-header.// -->
